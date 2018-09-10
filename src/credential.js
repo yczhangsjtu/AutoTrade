@@ -1,27 +1,4 @@
 module.exports = {
-	encrypted: false,
-	data: JSON.stringify({
-    keys: {
-      zb: {
-        access_key: '',
-        secret_key: ''
-      },
-      okex: {
-        access_key: '',
-        secret_key: ''
-      },
-      binance: {
-        access_key: '',
-        secret_key: ''
-      }
-    },
-		username:       'username',
-		password:       'password',
-		email_username: '123456789@qq.com',
-		email_password: 'qqpassword',
-		tomail:         'blabla@foo.com',
-		mail_host:      'smtp.qq.com',
-		mail_port:      465,
-	})
+  encrypted: true,
+  data: '571842e093e080bdf3a1c2b3d2dbe297a4970bb43e0512981d3401c23118a70178d9eafbe61ac30ae5c4858041e4e3aa0589fdc4852b9c7dca05b6a4675eef524a85cbf45da15151b5aaea54da5db62eb341d7aceb04eb39e128cfa23259c9cfb4c16b95d6371c074598de1e1a72bca2d091aa79384440c3bca8c7e894b0db676140455c541a2389b4a710394fd71ad87c013e43cbb000740591f0676c4cebb227e1da8c43e9bc595221e247e7c575b3d06688108314093f2f7da20040a8acd7403f7987ed7b440b055d925a7d1f7bf3be0328aec6a3a90f2b7a30c3ca9bd6f75f5479bf172101e6155769665bebc4fedef036cbd2beea2041492a6f5d52bf2f6b032d4c1429d9c730cacdb078e8664a595d9687d64b81e7a63c5c93b28255310fb99da768be445805ec81105f255c19608cf3ad44776129d629a5d892c16f20016aad1e10f7cd5f20440eba2bcb925ce856dd5b30bfd33cfbbbabefd77beabe2cb2873cbbcd0bd3e14e57e7ac326a1787504441a4db627732cd2d736ebb2384eac4b23c298c608236f847a5c7f77c0ebed593c776994e8184e1c42c9f84fcd63e1a0a9f4c2f76dadf2bacb42414177a6a3217c5c1d920e6b94a0e0bdfdb4a6ce82704b4f744d44ff08352b2757e3bae88d8ffd283be72e7e356124b7b144946c8988fddbbc61370942f5e08c68dd0955c6a7df6fde56913a6f163594ca9cabfa7f08ea9caa6f9f481b165a0882e65b252ef9e5351d4833f738890b0ada34409b72b4968cb33b59bf19c0f89d9fc67e346ac7144e5449968f4d2961c7925f7f4aea606954fbb1c7eb63769c3ff63ae331fd10dcccfb490431608e84c263fa2e7',
 }
-
