@@ -80,8 +80,8 @@ function onListening() {
 
 getCredential(function(cred) {
 
-  app.configure(function() {
-    app.set('cred', cred);
+  app.use(function(req, res, next) {
+    res.set('cred', cred);
   });
 
   /**
