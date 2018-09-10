@@ -41,6 +41,7 @@ getCredential(function(cred) {
 
   app.use(function(req, res, next) {
     res.set('cred', cred);
+    next();
   });
 
   /**
