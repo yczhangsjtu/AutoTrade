@@ -39,12 +39,7 @@ function normalizePort(val) {
 
 getCredential(function(cred) {
 
-  app.use(function(req, res, next) {
-    res.locals({
-      cred: cred
-    });
-    next();
-  });
+  app.locals.cred = cred;
 
   /**
    * Create HTTP server.
