@@ -40,7 +40,9 @@ function normalizePort(val) {
 getCredential(function(cred) {
 
   app.use(function(req, res, next) {
-    res.set('cred', cred);
+    res.locals({
+      cred: cred
+    });
     next();
   });
 
