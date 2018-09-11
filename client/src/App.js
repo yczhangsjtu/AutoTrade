@@ -1,14 +1,18 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  logout() {
+    fetch('/api/logout')
+  }
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <div className="col-md-2 offset-md-10">
+            <button className="btn" onClick={() => this.logout()}>Log Out</button>
+          </div>
         </header>
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.

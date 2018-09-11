@@ -6,6 +6,7 @@ import Login from './Login';
 import registerServiceWorker from './registerServiceWorker';
 
 fetch('/api/loggedin')
+  .then(res => res.json())
   .then(res => {
     if(res.data) {
       ReactDOM.render(<App />, document.getElementById('root'));

@@ -14,13 +14,16 @@ function getWinstonLogger(name) {
       myFormat
     ),
     transports: [
-      new transports.File({filename: './log/'+name+'.log', level: 'debug'}),
-      new transports.File({filename: './log/combined.log'}),
+      new transports.File({filename: './log/combined.log'})
     ]
   });
   if (process.env.NODE_ENV !== 'production') {
     logger.add(new transports.Console({
       format: format.simple()
+    }));
+    logger.add(new transports.File({
+      filename: './log/'+name+'.log',
+      level: 'debug'
     }));
   }
   return logger;

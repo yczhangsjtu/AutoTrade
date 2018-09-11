@@ -49,4 +49,10 @@ router.post('/login', function(req, res, next) {
   });
 });
 
+router.get('/api/logout', function(req, res, next) {
+  if(req.session.key)
+    delete req.session.key;
+  res.redirect('/');
+});
+
 module.exports = router;
