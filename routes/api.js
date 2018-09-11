@@ -49,7 +49,7 @@ router.post('/login', function(req, res, next) {
   });
 });
 
-router.get('/api/logout', function(req, res, next) {
+router.get('/logout', function(req, res, next) {
   logger.debug("logout: " + JSON.stringify(req.session));
   if(req.session.key) {
     logger.debug("Logging out");
