@@ -5,7 +5,7 @@ function getWinstonLogger(name) {
     level: 'info',
     format: winston.format.json(),
     transports: [
-      new winston.transports.File({filename: './log/'+name+'.log', level: 'error'}),
+      new winston.transports.File({filename: './log/'+name+'.log', level: 'debug'}),
       new winston.transports.File({filename: './log/combined.log'}),
     ]
   });

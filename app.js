@@ -28,7 +28,7 @@ app.use(session({
 
 app.use(function(req, res, next) {
   recorder.info(req.method + ' ' + req.path);
-  if(req.body) {
+  if(req.body != {}) {
     recorder.info(JSON.stringify(req.body));
   }
   next();
