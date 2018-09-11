@@ -7,7 +7,9 @@
 var app = require('../app');
 var debug = require('debug')('autotrade:server');
 var http = require('http');
+var https = require('https');
 
+var config = require('../config.js');
 var getCredential = require('../src/getcred.js');
 
 /**
@@ -40,11 +42,16 @@ function normalizePort(val) {
 getCredential(function(cred) {
 
   app.locals.cred = cred;
+  app.locals.config = config;
 
   /**
-   * Create HTTP server.
+   * Create HTTPS server.
    */
-  var server = http.createServer(app);
+	https_options = {
+		key: fs.readFileSync(config.https_key_file),
+		cert: fs.readFileSync(config.https_cert_file),
+	};
+  var server = http.createServer(https_options, app);
 
   /**
    * Listen on provided port, on all network interfaces.
