@@ -52,7 +52,7 @@ getCredential(function(cred) {
 		key: fs.readFileSync(config.https_key_file),
 		cert: fs.readFileSync(config.https_cert_file),
 	};
-  var server = http.createServer(https_options, app);
+  var server = https.createServer(https_options, app);
 
   /**
    * Listen on provided port, on all network interfaces.
