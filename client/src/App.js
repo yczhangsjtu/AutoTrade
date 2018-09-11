@@ -4,7 +4,6 @@ import './App.css';
 
 class App extends Component {
   render() {
-    fetch('/api')
     return (
       <div className="App">
         <header className="App-header">
