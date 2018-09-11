@@ -3,8 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var session = require('express-session')
+var session = require('express-session');
 
+var recorder = require('./src/logger.js')('app');
 var indexRouter = require('./routes/index');
 var apiRouter = require('./routes/api');
 
@@ -24,6 +25,14 @@ app.use(session({
   resave: true,
   saveUninitialized: true,
 }));
+
+app.use(function(req, res, next) {
+  recorder.info(req.method + ' ' + req.path);
+  if(req.body) {
+    recorder.info(JSON.stringify(req.body));
+  }
+  next();
+});
 
 app.use(express.static(path.join(__dirname, 'client/build')));
 

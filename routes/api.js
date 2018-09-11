@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var crypto = require('crypto');
+var logger = require('../src/logger.js')('api');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -12,11 +13,13 @@ router.get('/', function(req, res, next) {
 
 router.get('/loggedin', function(req, res, next) {
   if(!req.session.key) {
+    logger.debug('Not logged in');
     res.json({
       message: "Not logged in",
       data: false
     });
   } else {
+    logger.debug('Logged in');
     res.json({
       message: "Logged in",
       data: true
