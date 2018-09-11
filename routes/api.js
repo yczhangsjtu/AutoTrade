@@ -54,6 +54,15 @@ router.get('/api/logout', function(req, res, next) {
   if(req.session.key) {
     logger.debug("Logging out");
     delete req.session.key;
+    res.json({
+      message: "Logged out",
+      data: {}
+    });
+  } else {
+    res.json({
+      message: "Already logged out",
+      data: {}
+    });
   }
 });
 
