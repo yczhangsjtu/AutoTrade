@@ -27,9 +27,9 @@ app.use(session({
 }));
 
 app.use(function(req, res, next) {
-  recorder.info(req.method + ' ' + req.path);
+  recorder.debug(req.method + ' ' + req.path);
   if(req.body != {}) {
-    recorder.info(JSON.stringify(req.body));
+    recorder.debug(JSON.stringify(req.body));
   }
   next();
 });
