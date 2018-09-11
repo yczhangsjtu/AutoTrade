@@ -7,10 +7,10 @@ class Login extends Component {
     return (
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <form>
+          <form action="/api/login" method="post">
             <div class="form-group">
               <label class="form-label" for="username">Username</label>
-              <input type="text" class="form-control" id="username" aria-describedby="User Name" placeholder="Username" />
+              <input type="text" class="form-control" name="username" id="username" aria-describedby="User Name" placeholder="Username" />
             </div>
             <div class="form-group">
               <label class="form-label" for="password">Password</label>
