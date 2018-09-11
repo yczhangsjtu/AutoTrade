@@ -50,9 +50,10 @@ router.post('/login', function(req, res, next) {
 });
 
 router.get('/api/logout', function(req, res, next) {
-  if(req.session.key)
+  if(req.session.key) {
+    logger.debug("Logging out");
     delete req.session.key;
-  res.redirect('/');
+  }
 });
 
 module.exports = router;

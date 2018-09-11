@@ -5,6 +5,7 @@ import './App.css';
 class App extends Component {
   logout() {
     fetch('/api/logout')
+      .then(window.location.reload())
   }
   render() {
     return (
