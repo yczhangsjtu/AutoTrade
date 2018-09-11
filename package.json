@@ -6,6 +6,7 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "binance-api-node": "^0.8.4",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",
@@ -13,8 +14,10 @@
     "http-errors": "~1.6.2",
     "https": "^1.0.0",
     "jade": "~1.11.0",
+    "moment": "^2.22.2",
     "morgan": "~1.9.0",
     "prompt": "^1.0.0",
+    "request": "^2.88.0",
     "uglify-js": "^2.8.29",
     "winston": "^3.1.0"
   }
