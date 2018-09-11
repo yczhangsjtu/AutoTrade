@@ -42,6 +42,7 @@ router.post('/login', function(req, res, next) {
     res.redirect('/?message=wrong-password');
     return;
   }
+  logger.debug(req.session);
   crypto.randomBytes(48, function(err, buffer) {
     req.session.key = buffer.toString('hex');
     res.redirect('/');

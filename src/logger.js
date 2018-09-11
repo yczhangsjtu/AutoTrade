@@ -1,17 +1,26 @@
-var winston = require('winston');
+var { createLogger, format, transports } = require('winston');
+
+const { combine, timestamp, label, printf } = format;
+
+const myFormat = printf(info => {
+  return `${info.timestamp} [${info.label}] ${info.level}: ${info.message}`;
+});
 
 function getWinstonLogger(name) {
-  var logger = winston.createLogger({
+  var logger = createLogger({
     level: 'info',
-    format: winston.format.json(),
+    format: combine(
+      timestamp(),
+      myFormat
+    ),
     transports: [
-      new winston.transports.File({filename: './log/'+name+'.log', level: 'debug'}),
-      new winston.transports.File({filename: './log/combined.log'}),
+      new transports.File({filename: './log/'+name+'.log', level: 'debug'}),
+      new transports.File({filename: './log/combined.log'}),
     ]
   });
   if (process.env.NODE_ENV !== 'production') {
-    logger.add(new winston.transports.Console({
-      format: winston.format.simple()
+    logger.add(new transports.Console({
+      format: format.simple()
     }));
   }
   return logger;
