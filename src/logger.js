@@ -5,8 +5,8 @@ function getWinstonLogger(name) {
     level: 'info',
     format: winston.format.json(),
     transports: [
-      new winston.transports.File({filename: name+'.log', level: 'error'}),
-      new winston.transports.File({filename: 'combined.log'}),
+      new winston.transports.File({filename: './log/'+name+'.log', level: 'error'}),
+      new winston.transports.File({filename: './log/combined.log'}),
     ]
   });
   if (process.env.NODE_ENV !== 'production') {
